@@ -1,31 +1,19 @@
 package com.fca.cafeteria.data;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
 @Table(name = "tTipoBebida")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class TipoBebidaData {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int idTipoBebida;
+    private int id;
 
-    @Column(name = "descripcion", columnDefinition = "TEXT")
-    private String descripcionTipoBebida;
-
-    public TipoBebidaData() {}
-
-    public TipoBebidaData(int idTipoBebida, String descripcionTipoBebida) {
-        this.idTipoBebida = idTipoBebida;
-        this.descripcionTipoBebida = descripcionTipoBebida;
-    }
-
-    public int getIdTipoBebida() { return idTipoBebida; }
-    public void setIdTipoBebida(int idTipoBebida) { this.idTipoBebida = idTipoBebida; }
-
-    public String getDescripcionTipoBebida() { return descripcionTipoBebida; }
-    public void setDescripcionTipoBebida(String descripcionTipoBebida) {
-        this.descripcionTipoBebida = descripcionTipoBebida;
-    }
+    @Column(columnDefinition = "text")
+    private String descripcion;
 }

@@ -2,10 +2,10 @@ package com.fca.cafeteria.repository;
 
 import com.fca.cafeteria.data.BebidaData;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
+import java.util.Optional;
+
 public interface BebidaRepository extends JpaRepository<BebidaData, Integer> {
-
-    boolean existsByNombreBebida(String nombreBebida);
+    boolean existsByNombre(String nombre);
+    Optional<BebidaData> findByNombre(String nombre);
 }
